@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, Image, StyleSheet, Dimensions, TextInput, FlatList } from 'react-native'
 import SearchItem from '../Items/SearchItem';
 
-const SearchLayout = ({restaurants}) => {
+const SearchLayout = ({ restaurants, navigation }) => {
 
   // Variables used for the searching logic.
   const [query, setQuery] = useState('');
@@ -79,7 +79,7 @@ const SearchLayout = ({restaurants}) => {
         <FlatList
           data={suggestions}
           keyExtractor={(item) => item.title}
-          renderItem={(object) => <SearchItem item={object.item} />}
+          renderItem={(object) => <SearchItem item={object.item} navigation={navigation} />}
         />
       </View>
     </View>

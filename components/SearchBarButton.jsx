@@ -1,19 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Dimensions, Text, Image } from 'react-native';
 
-const SearchBarButton = ({restaurants}) => {
+const SearchBarButton = ({ restaurants, navigation }) => {
   const dimensionsWidth = Dimensions.get('window').width;
   const SEARCH_ICON = 'https://cdn2.iconfinder.com/data/icons/minimal-set-five/32/minimal-48-512.png';
 
-  function handleNavigation() {
-    Navigation.push(componentId, {
-      component: {
-        name: 'Search', // Push the screen registered with the 'Restaurant' key
-        passProps: {
-          restaurants: restaurants,
-        }
-      }
-    });
+  const handleNavigation = () => {
+    navigation.navigate('Search', {restaurants: restaurants})
   }
 
   const styles = StyleSheet.create({
@@ -45,7 +38,7 @@ const SearchBarButton = ({restaurants}) => {
   return (
     <TouchableOpacity
       style={styles.searchBarContainer}
-      onPress={() => {handleNavigation()}}
+      onPress={() => {() => handleNavigation()}}
     >
       <View style={styles.input}>
         <Image style={styles.searchIcon} source={{uri: SEARCH_ICON}} />

@@ -1,24 +1,12 @@
 import React from 'react'
 import { View, StyleSheet, Image, Text, Dimensions, TouchableOpacity } from 'react-native'
-import { Navigation } from 'react-native-navigation';
 
-const SearchItem = ({ item, componentId }) => {
+const SearchItem = ({ item, navigation }) => {
   const dimensionsHeight = Dimensions.get('window').height;
   const dimensionsWidth = Dimensions.get('window').width;
 
   const HandleNavigation = () => {
-    Navigation.push(componentId, {
-      component: {
-        name: 'Restaurant', // Push the screen registered with the 'Restaurant' key
-        options: { // Optional options object to configure the screen
-          topBar: {
-            title: {
-              text: item.title // Set the TopBar title of the new Screen
-            }
-          }
-        }
-      }
-    });
+    navigation.navigate('Restaurant', {restaurant: item});
   }
 
   const styles = StyleSheet.create({

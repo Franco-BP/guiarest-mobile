@@ -10,7 +10,7 @@ import SearchBarButton from '../SearchBarButton';
 import ShowItem from '../Items/ShowItem';
 import { storeContext } from '../Context/StoreProvider';
 
-const HomeLayout = ({ componentId }) => {
+const HomeLayout = ({ navigation }) => {
   const [store, dispatch] = useContext(storeContext);
   const mainAds = store.mainAds;
   const restaurants = store.restaurants;
@@ -26,7 +26,7 @@ const HomeLayout = ({ componentId }) => {
     <ScrollView style={styles.scrollView}>
       <Carousel carouselData={mainAds} />
 
-      <SearchBarButton />
+      <SearchBarButton navigation={navigation} />
 
       <FlatList
         style={{backgroundColor: 'transparent'}}
@@ -34,7 +34,7 @@ const HomeLayout = ({ componentId }) => {
         renderItem={({element}) =>
           <RestaurantItem
             item={element}
-            componentId={componentId}
+            navigation={navigation}
           />
         }
         keyExtractor={item => item.imageLink}
@@ -46,7 +46,7 @@ const HomeLayout = ({ componentId }) => {
         renderItem={({item}) => 
           <ShowItem
             item={element}
-            componentId={componentId}
+            navigation={navigation}
           />
         }
         keyExtractor={item => item.title}

@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
-import { Navigation } from 'react-native-navigation';
 
-const ShowItem = ({item, componentId}) => {
+const ShowItem = ({item, navigation}) => {
   const dimensionsWidth = Dimensions.get('window').width;
 
   // Assignemnt of the props received.
@@ -10,22 +9,7 @@ const ShowItem = ({item, componentId}) => {
   const imageLink = item.imageLink;
 
   const HandleNavigation = () => {
-    Navigation.push(componentId, {
-      component: {
-        name: 'Show', // Push the screen registered with the 'Restaurant' key
-        options: { // Optional options object to configure the screen
-          topBar: {
-            title: {
-              text: title // Set the TopBar title of the new Screen
-            }
-          }
-        },
-        passProps: {
-          item: item,
-          componentId: componentId,
-        }
-      }
-    });
+    navigation.navigate('Show', {item: item});
   };
 
   const styles = StyleSheet.create({

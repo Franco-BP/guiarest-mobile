@@ -3,20 +3,17 @@ import Carousel from '../Carousel/Carousel';
 import MapView from 'react-native-maps';
 import { Dimensions, ScrollView, StyleSheet, View, Text, Button, Image, TouchableOpacity, FlatList } from 'react-native';
 import { storeContext } from '../Context/StoreProvider';
-import { Navigation } from 'react-native-navigation';
 
 const HARDCODED_REST = {
   description: "Horario: de 12 a 22 horas.\nSolo retiro en el local.\nESTE ES EL OBJETO HARDCODEADO",
 }
-
-const GO_BACK_ICON = 'https://cdn-icons-png.flaticon.com/512/54/54321.png';
 
 const types = {
   menu: 'menu',
   shows: 'shows',
 };
 
-const RestaurantLayout = ({restaurant, componentId, restaurantId}) => {
+const RestaurantLayout = ({restaurant, restaurantId, navigation}) => {
 
   // Dimensiones del dispositivo.
   const dimensionsWidth = Dimensions.get('window').width;
@@ -30,25 +27,9 @@ const RestaurantLayout = ({restaurant, componentId, restaurantId}) => {
   const [section, setSection] = useState(types.shows);
   const [menuColor, setMenuColour] = useState('grey');
   const [showsColor, setShowsColour] = useState('white');
-  const [restaurantItem, setRestaurantItem] = useState(null);
 
   function handleNavigation(showItem) {
-    Navigation.push(componentId, {
-      component: {
-        name: 'Show', // Push the screen registered with the 'Restaurant' key
-        options: { // Optional options object to configure the screen
-          topBar: {
-            title: {
-              text: showItem.title // Set the TopBar title of the new Screen
-            }
-          }
-        },
-        passProps: {
-          show: showItem,
-          componentId: componentId,
-        }
-      }
-    });
+    navigation.navigate('Show', {show: showItem});
   }
 
   const renderShow = (show) => {
@@ -66,23 +47,8 @@ const RestaurantLayout = ({restaurant, componentId, restaurantId}) => {
     )
   }
 
-  // Search and save of the restaurant and the shows.
+  // Search and save of the shows.
   useEffect(() => {
-    let tempRestaurant = restaurant;
-
-    if (tempRestaurant == null || tempRestaurant == undefined) {
-      // Search and save of the restaurant
-      // with the id passed in the props.
-      let indexOfRestaurant = -1;
-
-      store.restaurants.map(element => {
-        if (element.title === restaurantId) {
-          indexOfRestaurant = store.restaurants.indexOf(element);
-        };
-      });
-      tempRestaurant = indexOfRestaurant > -1 ? store.restaurants.at(indexOfRestaurant) : HARDCODED_REST; 
-    }
-
     // Search and save of the shows
     // that contains the restaurant.
     let showsIdList = restaurant.showsIdList;
@@ -98,7 +64,6 @@ const RestaurantLayout = ({restaurant, componentId, restaurantId}) => {
 
     // Assignment of the saved information.
     setShows(tempShows);
-    setRestaurantItem(tempRestaurant);
   }, [])
 
   // Function to change color of the buttons to relate with the display.
@@ -201,13 +166,13 @@ const RestaurantLayout = ({restaurant, componentId, restaurantId}) => {
         >
           <Image
             style={styles.logo}
-            source={{uri: restaurantItem?.imageLink}}
+            source={{uri: restaurant?.imageLink}}
           />
           <Text style={{ marginTop: 4, textAlign: 'center', fontWeight: '600', fontSize: 20, }} >
-            {restaurantItem?.title}
+            {restaurant?.title}
           </Text>
           <Text style={{ marginTop: 10, textAlign: 'center', fontSize: 15, }}>
-            {restaurantItem?.description}
+            {restaurant?.description}
           </Text>
         </View>
         <MapView style={{ width: dimensionsWidth/2.5, }} />
@@ -229,7 +194,7 @@ const RestaurantLayout = ({restaurant, componentId, restaurantId}) => {
         {section === types.menu && (
           // Menu Section
           <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 15, }} >
-            {restaurantItem?.menu}
+            {restaurant?.menu}
           </Text>
         )}
         {section === types.shows && shows?.length > 0 && (

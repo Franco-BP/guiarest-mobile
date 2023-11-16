@@ -5,6 +5,33 @@ import HomeLayout from './components/Layouts/HomeLayout';
 import RestaurantLayout from './components/Layouts/RestaurantLayout';
 import SearchLayout from './components/Layouts/SearchLayout';
 import ShowLayout from './components/Layouts/ShowLayout';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const App = () => {
+
+  const Stack = createNativeStackNavigator();
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <View style={styles.container}>
+          <SafeAreaView style={styles.container}>
+            <StoreProvider>
+              <Stack.Screen name='Home' component={<HomLayout/>} />
+              <Stack.Screen name='Search' component={<SearchLayout/>} />
+              <Stack.Screen name='Restaurant' component={<RestaurantLayout/>} />
+              <Stack.Screen name='Show' component={<ShowLayout/>} />
+            </StoreProvider>
+          </SafeAreaView>
+          <StatusBar style="auto" />
+        </View>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+
+export default App
 
 Navigation.events().registerAppLaunchedListener(async () => {
   Navigation.setRoot({

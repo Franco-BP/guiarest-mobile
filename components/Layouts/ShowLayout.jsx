@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Carousel from '../Carousel/Carousel';
 import MapView from 'react-native-maps';
-import { Dimensions, ScrollView, StyleSheet, View, Text, Button, Image, FlatList } from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, View, Text, Image } from 'react-native';
 import { storeContext } from '../Context/StoreProvider';
 
 const HARDCODED_SHOW = {
@@ -10,7 +10,7 @@ const HARDCODED_SHOW = {
   description: 'Descripción no disponible',
 }
 
-const ShowLayout = ({show, componentId}) => {
+const ShowLayout = ({ show, navigation }) => {
 
   // Dimensiones del dispositivo.
   const dimensionsWidth = Dimensions.get('window').width;
