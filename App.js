@@ -6,17 +6,21 @@ import RestaurantLayout from './components/Layouts/RestaurantLayout';
 import SearchLayout from './components/Layouts/SearchLayout';
 import ShowLayout from './components/Layouts/ShowLayout';
 
-// Componenets Style.
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexWrap: 'wrap',
-    backgroundColor: '#f3f6f4',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: StatusBar.currentHeight || 0,
-  },
-})
+Navigation.events().registerAppLaunchedListener(async () => {
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'Home'
+            }
+          },
+        ]
+      },
+    }
+  });
+});
 
 // HomeScreen component.
 const HomeScreen = (props) => {
@@ -46,18 +50,14 @@ Navigation.registerComponent('Search', () => {<SearchLayout />});
 Navigation.registerComponent('Restaurant', () => {<RestaurantLayout />});
 Navigation.registerComponent('Show', () => {<ShowLayout />});
 
-Navigation.events().registerAppLaunchedListener(async () => {
-  Navigation.setRoot({
-    root: {
-      stack: {
-        children: [
-          {
-            component: {
-              name: 'Home'
-            }
-          },
-        ]
-      },
-    }
-  });
-});
+// Componenets Style.
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexWrap: 'wrap',
+    backgroundColor: '#f3f6f4',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: StatusBar.currentHeight || 0,
+  },
+})
