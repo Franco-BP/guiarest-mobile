@@ -12,7 +12,7 @@ const SearchBarButton = ({ restaurants, navigation }) => {
   const styles = StyleSheet.create({
     searchBarContainer: {
       minHeight: 20,
-      marginTop: 10,
+      marginTop: 20,
       marginBottom: 10,
       marginHorizontal: 20,
       width: dimensionsWidth-40,

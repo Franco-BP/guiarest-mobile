@@ -44,8 +44,8 @@ const ShowLayout = ({ route, navigation }) => {
       backgroundColor: '#f3f6f4',
     },
     logo: {
-      height: dimensionsWidth/2.5,
-      width: dimensionsWidth/4.4,
+      height: dimensionsHeight/4.5,
+      width: dimensionsHeight/8,
       justifyContent: 'flex-end',
       borderRadius: 10,
     },
@@ -111,16 +111,16 @@ const ShowLayout = ({ route, navigation }) => {
             source={{uri: show?.imageLink}}
             alt={show?.title? show.title : HARDCODED_SHOW.title}
           />
-          <Text style={{ marginTop: 4, textAlign: 'center', fontWeight: '600', fontSize: 20, }} >
-            {show?.title? show.title : HARDCODED_SHOW.title}
-          </Text>
         </View>
         <MapView style={{ width: dimensionsWidth/2.5, }} />
       </View>
 
       <View style={styles.genericSection}>
-        <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 20, fontWeight:'600', }} >
-          Descripción del show:
+        <Text style={{ marginTop: 4, fontSize: 25, fontWeight: '700', }} >
+          {show?.title? show.title : HARDCODED_SHOW.title}
+        </Text>
+        <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 20, fontWeight:'500', }} >
+          Descripción:
         </Text>
         <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 15, }} >
           {show?.description? show.description : HARDCODED_SHOW.description}

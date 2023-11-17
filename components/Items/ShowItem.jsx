@@ -34,7 +34,7 @@ const ShowItem = ({item, navigation}) => {
     },  
     title: {
       color: 'black',
-      fontSize: 25,
+      fontSize: 21,
       fontWeight: '600',
       textAlign: 'center'
     },
