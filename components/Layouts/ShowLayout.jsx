@@ -109,10 +109,10 @@ const ShowLayout = ({ route, navigation }) => {
           <Image
             style={styles.logo}
             source={{uri: show?.imageLink}}
-            alt={show.title? show.title : HARDCODED_SHOW.title}
+            alt={show?.title? show.title : HARDCODED_SHOW.title}
           />
           <Text style={{ marginTop: 4, textAlign: 'center', fontWeight: '600', fontSize: 20, }} >
-            {show.title? show.title : HARDCODED_SHOW.title}
+            {show?.title? show.title : HARDCODED_SHOW.title}
           </Text>
         </View>
         <MapView style={{ width: dimensionsWidth/2.5, }} />
@@ -123,7 +123,7 @@ const ShowLayout = ({ route, navigation }) => {
           Descripción del show:
         </Text>
         <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 15, }} >
-          {show.description? show.description : HARDCODED_SHOW.description}
+          {show?.description? show.description : HARDCODED_SHOW.description}
         </Text>
       </View>
     </ScrollView>

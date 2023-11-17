@@ -9,7 +9,7 @@ const HARDCODED_REST = {
 }
 
 const types = {
-  menu: 'menu',
+  carta: 'carta',
   shows: 'shows',
 };
 
@@ -71,7 +71,7 @@ const RestaurantLayout = ({route, navigation}) => {
   // Function to change color of the buttons to relate with the display.
   useEffect(() => {
     switch (section) {
-      case types.menu:
+      case types.carta:
         setMenuColour('#a0a0a0');
         setShowsColour('#f3f6f4');
         break;
@@ -182,7 +182,7 @@ const RestaurantLayout = ({route, navigation}) => {
 
       <View style={styles.buttonsContainer}>
         <View style={{...styles.genericButton, backgroundColor: menuColor}}>
-          <Button onPress={() => setSection(types.menu)} title="Menu"/>
+          <Button onPress={() => setSection(types.carta)} title="Carta"/>
         </View>
         <View style={{...styles.genericButton, backgroundColor: showsColor}}>
           <Button onPress={() => setSection(types.shows)} title="Shows"/>
@@ -191,12 +191,12 @@ const RestaurantLayout = ({route, navigation}) => {
 
       <View style={styles.genericSection}>
         <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 20, fontWeight:'600', }} >
-          {section === types.menu ? 'Menu:' : 'Shows:'}
+          {section === types.carta ? 'Carta:' : 'Shows:'}
         </Text>
-        {section === types.menu && (
-          // Menu Section
+        {section === types.carta && (
+          // Carta Section
           <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 15, }} >
-            {restaurant?.menu}
+            {restaurant?.carta}
           </Text>
         )}
         {section === types.shows && shows?.length > 0 && (
