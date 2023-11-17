@@ -27,8 +27,8 @@ const RestaurantLayout = ({route, navigation}) => {
   const dimensionsHeight = Dimensions.get('window').height;
 
   const [section, setSection] = useState(types.shows);
-  const [menuColor, setMenuColour] = useState('grey');
-  const [showsColor, setShowsColour] = useState('white');
+  const [cartaColor, setCartaColor] = useState('grey');
+  const [showsColor, setShowsColor] = useState('white');
 
   function handleNavigation(showItem) {
     navigation.navigate('Show', {show: showItem});
@@ -72,12 +72,12 @@ const RestaurantLayout = ({route, navigation}) => {
   useEffect(() => {
     switch (section) {
       case types.carta:
-        setMenuColour('#a0a0a0');
-        setShowsColour('#f3f6f4');
+        setCartaColor('#f3f6f4');
+        setShowsColor('#a0a0a0');
         break;
       case types.shows:
-        setMenuColour('#f3f6f4');
-        setShowsColour('#a0a0a0');
+        setShowsColor('#f3f6f4');
+        setCartaColor('#a0a0a0');
         break;
     }
   }, [section]);
@@ -181,7 +181,7 @@ const RestaurantLayout = ({route, navigation}) => {
       </View>
 
       <View style={styles.buttonsContainer}>
-        <View style={{...styles.genericButton, backgroundColor: menuColor}}>
+        <View style={{...styles.genericButton, backgroundColor: cartaColor}}>
           <Button onPress={() => setSection(types.carta)} title="Carta"/>
         </View>
         <View style={{...styles.genericButton, backgroundColor: showsColor}}>
