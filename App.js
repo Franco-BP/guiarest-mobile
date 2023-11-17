@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeLayout from './components/Layouts/HomeLayout';
 import RestaurantLayout from './components/Layouts/RestaurantLayout';
 import SearchLayout from './components/Layouts/SearchLayout';
 import ShowLayout from './components/Layouts/ShowLayout';
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import StoreProvider from './components/Context/StoreProvider';
 
 const App = () => {
 
