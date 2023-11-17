@@ -1,8 +1,8 @@
 import React from 'react';
 import ShowLayout from '../Layouts/ShowLayout';
 
-export default function ShowScreen({ show, navigation }){
+export default function ShowScreen({ route, navigation }){
   return(
-    <ShowLayout show={show} navigation={navigation} />
+    <ShowLayout route={route} navigation={navigation} />
   )
 };

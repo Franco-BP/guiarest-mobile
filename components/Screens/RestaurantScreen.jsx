@@ -1,8 +1,8 @@
 import React from 'react';
 import RestaurantLayout from '../Layouts/RestaurantLayout';
 
-export default function RestaurantScreen({ restaurant, navigation }){
+export default function RestaurantScreen({ route, navigation }){
   return(
-    <RestaurantLayout restaurant={restaurant} navigation={navigation} />
+    <RestaurantLayout route={route} navigation={navigation} />
   )
 };

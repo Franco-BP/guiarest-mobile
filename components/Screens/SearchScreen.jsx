@@ -1,8 +1,8 @@
 import React from 'react';
 import SearchLayout from '../Layouts/SearchLayout';
 
-export default function SearchScreen({ restaurants, navigation }){
+export default function SearchScreen({ route, navigation }){
   return(
-    <SearchLayout restaurants={restaurants} navigation={navigation} />
+    <SearchLayout route={route} navigation={navigation} />
   );
 };
