@@ -26,7 +26,7 @@ const HomeLayout = ({ navigation }) => {
     <ScrollView style={styles.scrollView}>
       <Carousel carouselData={mainAds} />
 
-      <SearchBarButton navigation={navigation} />
+      <SearchBarButton navigation={navigation} restaurants={restaurants} />
 
       <FlatList
         style={{backgroundColor: 'transparent'}}

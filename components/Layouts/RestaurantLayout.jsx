@@ -13,7 +13,7 @@ const types = {
   shows: 'shows',
 };
 
-const RestaurantLayout = ({restaurant, restaurantId, navigation}) => {
+const RestaurantLayout = ({restaurant, navigation}) => {
 
   // Dimensiones del dispositivo.
   const dimensionsWidth = Dimensions.get('window').width;

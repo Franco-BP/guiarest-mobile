@@ -2,11 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeLayout from './components/Layouts/HomeLayout';
-import RestaurantLayout from './components/Layouts/RestaurantLayout';
-import SearchLayout from './components/Layouts/SearchLayout';
-import ShowLayout from './components/Layouts/ShowLayout';
 import StoreProvider from './components/Context/StoreProvider';
+import HomeScreen from './components/Screens/HomeScreen';
+import SearchScreen from './components/Screens/SearchScreen';
+import RestaurantScreen from './components/Screens/RestaurantScreen';
+import ShowScreen from './components/Screens/ShowScreen';
 
 const App = () => {
 
@@ -16,10 +16,10 @@ const App = () => {
     <StoreProvider>
       <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen name='Home' component={<HomeLayout/>} />
-            <Stack.Screen name='Search' component={<SearchLayout/>} />
-            <Stack.Screen name='Restaurant' component={<RestaurantLayout/>} />
-            <Stack.Screen name='Show' component={<ShowLayout/>} />
+            <Stack.Screen name='Home' component={HomeScreen} />
+            <Stack.Screen name='Search' component={SearchScreen} />
+            <Stack.Screen name='Restaurant' component={RestaurantScreen} />
+            <Stack.Screen name='Show' component={ShowScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </StoreProvider>
