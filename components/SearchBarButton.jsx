@@ -12,7 +12,8 @@ const SearchBarButton = ({ restaurants, navigation }) => {
   const styles = StyleSheet.create({
     searchBarContainer: {
       minHeight: 20,
-      marginVertical: 15,
+      marginTop: 10,
+      marginBottom: 10,
       marginHorizontal: 20,
       width: dimensionsWidth-40,
     },
@@ -20,10 +21,6 @@ const SearchBarButton = ({ restaurants, navigation }) => {
       padding: 10,
       borderWidth: 1,
       borderRadius: 10,
-      shadowColor: '#171717',
-      shadowOffset: {width: -2, height: 4},
-      shadowOpacity: 0.2,
-      shadowRadius: 3,
       flexDirection: 'row',
       alignContent: 'center',
       justifyContent: 'flex-start',

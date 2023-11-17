@@ -17,7 +17,6 @@ const RestaurantItem = ({item, navigation}) => {
       backgroundColor: 'transparent',
       padding: dimensionsWidth/20,
       paddingRight: 0,
-      marginVertical: 8,
     },
     logo: {
       width: dimensionsWidth/4,
