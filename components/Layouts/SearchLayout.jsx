@@ -37,7 +37,7 @@ const SearchLayout = ({ route, navigation }) => {
     input: {
       height: 40,
       width: dimensionsWidth/1.5,
-      paddingHorizontal: 10,
+      paddingRight: 10,
       borderWidth: 1,
       borderColor: 'grey',
       borderRadius: 10,
