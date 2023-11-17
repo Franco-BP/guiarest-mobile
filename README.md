@@ -14,7 +14,7 @@
 
 - Ejecutar `npx expo start` o `expo start`
 
-## Estructura del proyecto(Depende del proyecto)
+## Estructura del proyecto
 
 - `assets` Imágenes estáticas que utiliza la aplicación.
 - `Components` Componentes principales y genéricos de la aplicación.
