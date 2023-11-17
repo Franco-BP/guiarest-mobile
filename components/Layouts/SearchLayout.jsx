@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { View, Image, StyleSheet, Dimensions, TextInput, FlatList } from 'react-native'
 import SearchItem from '../Items/SearchItem';
 
-const SearchLayout = ({ restaurants, navigation }) => {
+const SearchLayout = ({ route, navigation }) => {
+  // Assignment of the parameter brought from navigation.
+  const { restaurants } = route.params;
 
   // Variables used for the searching logic.
   const [query, setQuery] = useState('');

@@ -10,7 +10,9 @@ const HARDCODED_SHOW = {
   description: 'Descripción no disponible',
 }
 
-const ShowLayout = ({ show, navigation }) => {
+const ShowLayout = ({ route, navigation }) => {
+  // Assignment of the parameter brought from navigation.
+  const { show } = route.params;
 
   // Dimensiones del dispositivo.
   const dimensionsWidth = Dimensions.get('window').width;

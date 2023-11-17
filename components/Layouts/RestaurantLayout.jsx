@@ -13,16 +13,18 @@ const types = {
   shows: 'shows',
 };
 
-const RestaurantLayout = ({restaurant, navigation}) => {
-
-  // Dimensiones del dispositivo.
-  const dimensionsWidth = Dimensions.get('window').width;
-  const dimensionsHeight = Dimensions.get('window').height;
-
+const RestaurantLayout = ({route, navigation}) => {
+  // Assignment of the parameter brought from navigation.
+  const { restaurant } = route.params;
+  
   // Utilización del contexto.
   const [store, dispatch] = useContext(storeContext);
   const [shows, setShows] = useState(null);
   const mainAds = store.mainAds;
+  
+  // Dimensiones del dispositivo.
+  const dimensionsWidth = Dimensions.get('window').width;
+  const dimensionsHeight = Dimensions.get('window').height;
 
   const [section, setSection] = useState(types.shows);
   const [menuColor, setMenuColour] = useState('grey');
