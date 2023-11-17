@@ -3,7 +3,6 @@ import {
   FlatList,
   StyleSheet,
   ScrollView,
-  Text,
 } from 'react-native';
 import Carousel from '../Carousel/Carousel';
 import RestaurantItem from '../Items/RestaurantItem';
@@ -25,11 +24,7 @@ const HomeLayout = ({ navigation }) => {
 
   return (
     <ScrollView style={styles.scrollView}>
-      <Text>
-        {JSON.stringify(restaurants)}
-      </Text>
-
-      {/* <Carousel carouselData={mainAds} />
+      <Carousel carouselData={mainAds} />
 
       <SearchBarButton navigation={navigation} restaurants={restaurants} />
 
@@ -38,7 +33,7 @@ const HomeLayout = ({ navigation }) => {
         data={restaurants}
         renderItem={({element}) =>
           <RestaurantItem
-            item={element}
+            item={element.item}
             navigation={navigation}
           />
         }
@@ -50,13 +45,13 @@ const HomeLayout = ({ navigation }) => {
         data={shows}
         renderItem={({element}) => 
           <ShowItem
-            item={element}
+            item={element.item}
             navigation={navigation}
           />
         }
         keyExtractor={item => item.title}
         horizontal={true}
-      /> */}
+      />
     </ScrollView>
   )
 }
