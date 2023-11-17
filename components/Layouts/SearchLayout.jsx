@@ -20,7 +20,7 @@ const SearchLayout = ({ route, navigation }) => {
       height: dimensionsHeight,
     },
     searchBarContainer: {
-      height: 40,
+      minHeight: 40,
       padding: 20,
       backgroundColor: '#f3f6f4',
       display: 'flex',
