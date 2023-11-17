@@ -22,11 +22,11 @@ const SearchLayout = ({ route, navigation }) => {
     searchBarContainer: {
       minHeight: 40,
       padding: 20,
-      paddingLeft: 0,
+      paddingLeft: 10,
       backgroundColor: '#f3f6f4',
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
       alignContent: 'center',
     },
     searchIcon: {
@@ -37,7 +37,7 @@ const SearchLayout = ({ route, navigation }) => {
     input: {
       height: 40,
       width: dimensionsWidth/1.5,
-      paddingRight: 10,
+      paddingHorizontal: 10,
       borderWidth: 1,
       borderColor: 'grey',
       borderRadius: 10,
