@@ -15,6 +15,8 @@ const SearchBarButton = ({ restaurants, navigation }) => {
       marginVertical: 15,
       paddingHorizontal: 40,
       width: dimensionsWidth-40,
+      borderWidth: 1,
+      borderColor: 'black',
     },
     input: {
       padding: 10,
