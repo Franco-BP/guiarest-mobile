@@ -13,16 +13,16 @@ const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <StoreProvider>
-          <Stack.Screen name='Home' component={<HomeLayout/>} />
-          <Stack.Screen name='Search' component={<SearchLayout/>} />
-          <Stack.Screen name='Restaurant' component={<RestaurantLayout/>} />
-          <Stack.Screen name='Show' component={<ShowLayout/>} />
-        </StoreProvider>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <StoreProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name='Home' component={<HomeLayout/>} />
+            <Stack.Screen name='Search' component={<SearchLayout/>} />
+            <Stack.Screen name='Restaurant' component={<RestaurantLayout/>} />
+            <Stack.Screen name='Show' component={<ShowLayout/>} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </StoreProvider>
   )
 }
 
