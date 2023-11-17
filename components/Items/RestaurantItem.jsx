@@ -9,7 +9,7 @@ const RestaurantItem = ({item, navigation}) => {
   const imageLink = item.imageLink;
 
   const HandleNavigation = () => {
-    navigation.navigate('Restaurant', {restaurant: item, componentId: componentId});
+    navigation.navigate('Restaurant', {restaurant: item});
   };
 
   const styles = StyleSheet.create({
