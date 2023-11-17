@@ -24,7 +24,11 @@ const HomeLayout = ({ navigation }) => {
 
   return (
     <ScrollView style={styles.scrollView}>
-      <Carousel carouselData={mainAds} />
+      <Text>
+        {restaurants}
+      </Text>
+
+      {/* <Carousel carouselData={mainAds} />
 
       <SearchBarButton navigation={navigation} restaurants={restaurants} />
 
@@ -43,7 +47,7 @@ const HomeLayout = ({ navigation }) => {
 
       <FlatList
         data={shows}
-        renderItem={({item}) => 
+        renderItem={({element}) => 
           <ShowItem
             item={element}
             navigation={navigation}
@@ -51,7 +55,7 @@ const HomeLayout = ({ navigation }) => {
         }
         keyExtractor={item => item.title}
         horizontal={true}
-      />
+      /> */}
     </ScrollView>
   )
 }
