@@ -13,8 +13,7 @@ const SearchBarButton = ({ restaurants, navigation }) => {
     searchBarContainer: {
       minHeight: 20,
       marginVertical: 15,
-      paddingLeft: 20,
-      paddingRight: 20,
+      marginHorizontal: 20,
       width: dimensionsWidth-40,
       borderWidth: 1,
       borderColor: 'black',
