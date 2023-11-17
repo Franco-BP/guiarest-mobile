@@ -3,6 +3,7 @@ import {
   FlatList,
   StyleSheet,
   ScrollView,
+  Text,
 } from 'react-native';
 import Carousel from '../Carousel/Carousel';
 import RestaurantItem from '../Items/RestaurantItem';
@@ -25,7 +26,7 @@ const HomeLayout = ({ navigation }) => {
   return (
     <ScrollView style={styles.scrollView}>
       <Text>
-        {restaurants}
+        {JSON.stringify(restaurants)}
       </Text>
 
       {/* <Carousel carouselData={mainAds} />
