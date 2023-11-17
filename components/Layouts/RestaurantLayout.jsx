@@ -101,7 +101,6 @@ const RestaurantLayout = ({route, navigation}) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       padding: 20,
-      backgroundColor: '#f3f6f4',
     },
     logo: {
       height: dimensionsWidth/5,
@@ -125,15 +124,17 @@ const RestaurantLayout = ({route, navigation}) => {
       borderWidth: 1,
       borderColor: 'grey',
     },
+    genericSection: {
+      width: dimensionsWidth,
+    },
     showContainer: {
       width: dimensionsWidth/2.5,
-      height: dimensionsWidth/1,
       display: 'flex',
       flexDirection: 'row',
       alignContent: 'center',
       justifyContent: 'space-between',
-      marginTop: 10,
-      marginLeft: 10,
+      margin: 10,
+      marginRight: 5,
     },
     showIcon: {
       height: dimensionsWidth/2.8,
@@ -151,13 +152,13 @@ const RestaurantLayout = ({route, navigation}) => {
       fontSize: 15,
       textAlign: 'left',
       marginLeft: 10,
-      paddingTop: 5,
+      marginTop: 5,
       fontWeight: '500',
     },
   });
 
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: '#f3f6f4', }}>
       <Carousel carouselData={mainAds} />
 
       <View style={styles.header}>

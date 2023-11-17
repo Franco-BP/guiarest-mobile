@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import StoreProvider from './components/Context/StoreProvider';
-import HomeScreen from './components/Screens/HomeScreen';
+import GuiaRestScreen from './components/Screens/HomeScreen';
 import SearchScreen from './components/Screens/SearchScreen';
 import RestaurantScreen from './components/Screens/RestaurantScreen';
 import ShowScreen from './components/Screens/ShowScreen';
@@ -16,7 +16,7 @@ const App = () => {
     <StoreProvider>
       <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen name='Home' component={HomeScreen} />
+            <Stack.Screen name='GuiaRest' component={GuiaRestScreen} />
             <Stack.Screen name='Search' component={SearchScreen} />
             <Stack.Screen name='Restaurant' component={RestaurantScreen} />
             <Stack.Screen name='Show' component={ShowScreen} />
