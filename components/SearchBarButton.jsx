@@ -38,7 +38,7 @@ const SearchBarButton = ({ restaurants, navigation }) => {
   return (
     <TouchableOpacity
       style={styles.searchBarContainer}
-      onPress={() => {() => handleNavigation()}}
+      onPress={() => handleNavigation()}
     >
       <View style={styles.input}>
         <Image style={styles.searchIcon} source={{uri: SEARCH_ICON}} />

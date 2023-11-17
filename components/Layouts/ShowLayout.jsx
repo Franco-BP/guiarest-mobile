@@ -112,11 +112,11 @@ const ShowLayout = ({ route, navigation }) => {
             alt={show?.title? show.title : HARDCODED_SHOW.title}
           />
         </View>
-        <MapView style={{ width: dimensionsWidth/2.5, }} />
+        <MapView style={{ height: dimensionsHeight/4.5, width: dimensionsWidth/2.5, }} />
       </View>
 
       <View style={styles.genericSection}>
-        <Text style={{ marginTop: 4, fontSize: 25, fontWeight: '700', }} >
+        <Text style={{ marginTop: 4, marginLeft: 20, fontSize: 25, fontWeight: '700', }} >
           {show?.title? show.title : HARDCODED_SHOW.title}
         </Text>
         <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 20, fontWeight:'500', }} >
