@@ -8,7 +8,7 @@ const ShowItem = ({item, navigation}) => {
   const title = item.title;
   const imageLink = item.imageLink;
 
-  const HandleNavigation = () => {
+  function HandleNavigation() {
     navigation.navigate('Show', {item: item});
   };
 

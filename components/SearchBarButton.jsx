@@ -5,16 +5,15 @@ const SearchBarButton = ({ restaurants, navigation }) => {
   const dimensionsWidth = Dimensions.get('window').width;
   const SEARCH_ICON = 'https://cdn2.iconfinder.com/data/icons/minimal-set-five/32/minimal-48-512.png';
 
-  const handleNavigation = () => {
+  function handleNavigation() {
     navigation.navigate('Search', {restaurants: restaurants})
   }
 
   const styles = StyleSheet.create({
     searchBarContainer: {
       height: 20,
-      marginTop: 12,
-      paddingTop: 10,
-      paddingHorizontal: 20,
+      marginVertical: 15,
+      paddingHorizontal: 40,
       width: dimensionsWidth-40,
     },
     input: {
