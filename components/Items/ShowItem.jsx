@@ -9,7 +9,7 @@ const ShowItem = ({item, navigation}) => {
   const imageLink = item.imageLink;
 
   function HandleNavigation() {
-    navigation.navigate('Show', {item: item});
+    navigation.navigate('Show', {show: item});
   };
 
   const styles = StyleSheet.create({

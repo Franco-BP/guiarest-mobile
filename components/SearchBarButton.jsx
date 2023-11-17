@@ -15,14 +15,14 @@ const SearchBarButton = ({ restaurants, navigation }) => {
       marginVertical: 15,
       paddingHorizontal: 40,
       width: dimensionsWidth-40,
-    },
-    input: {
-      padding: 10,
       borderWidth: 1,
       borderRadius: 10,
       flexDirection: 'row',
       alignContent: 'center',
-      justifyContent: 'flex-start'
+      justifyContent: 'flex-start',
+    },
+    input: {
+      // padding: 10,
     },
     searchIcon: {
       height: 15,
@@ -39,10 +39,10 @@ const SearchBarButton = ({ restaurants, navigation }) => {
       style={styles.searchBarContainer}
       onPress={() => {() => handleNavigation()}}
     >
-      <View style={styles.input}>
         <Image style={styles.searchIcon} source={{uri: SEARCH_ICON}} />
         <Text style={styles.placeHolder}>Buscar por nombre...</Text>
-      </View>
+      {/* <View style={styles.input}>
+      </View> */}
     </TouchableOpacity>
   )
 }
