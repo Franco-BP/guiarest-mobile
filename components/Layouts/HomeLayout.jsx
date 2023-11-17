@@ -31,9 +31,9 @@ const HomeLayout = ({ navigation }) => {
       <FlatList
         style={{backgroundColor: 'transparent'}}
         data={restaurants}
-        renderItem={({element}) =>
+        renderItem={({item}) =>
           <RestaurantItem
-            item={element.item}
+            item={item}
             navigation={navigation}
           />
         }
@@ -43,9 +43,9 @@ const HomeLayout = ({ navigation }) => {
 
       <FlatList
         data={shows}
-        renderItem={({element}) => 
+        renderItem={({item}) => 
           <ShowItem
-            item={element.item}
+            item={item}
             navigation={navigation}
           />
         }
